@@ -158,4 +158,12 @@ curl --location --request DELETE 'http://localhost:3000/api/v1/delete/bookByID/6
     "message": "Book deleted"
 }
 ```
+# Future Scope
 
+* Add users
+* Users can be divided into 2 groups(Admin and Users) 
+* Add middleware in APIs
+* Implement security checks
+    * Users can only add/fetch/update/delete their own books
+    * Admins can perform all actions
+    * Admins can add users
