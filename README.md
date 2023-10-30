@@ -17,7 +17,7 @@ http://3.109.58.16:3000/api/health
 ```
 ## Run the project locally
 ```
-node server.js
+npm start
 ```
 
 # APIs 
