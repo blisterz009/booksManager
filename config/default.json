@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://root:rootPass@cluster0.0ermphz.mongodb.net/books"
+}
