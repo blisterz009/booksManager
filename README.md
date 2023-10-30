@@ -9,7 +9,12 @@ Users should be able to:
   * Update a book's details
   * Delete a book
 
+## The project is deployed in docker which is running in AWS EC2
 
+### Health check path
+```
+http://3.109.58.16:3000/api/health
+```
 ## Run the project locally
 ```
 node server.js
