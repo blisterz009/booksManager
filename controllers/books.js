@@ -9,7 +9,7 @@ exports.createBook = async (req, res) => {
         }
         let book = new books(obj)
         await book.save();
-        res.status(200).json({ message: "Proposal successfully created", book: book })
+        res.status(200).json({ message: "Book successfully created", BookData: book })
     }
     catch (err) {
         console.error(err.message);
@@ -76,7 +76,7 @@ exports.updateBook = async (req, res) => {
             book.ageGroup = updateObj.ageGroup
         }
         await book.save();
-        res.status(200).json({ book: book })
+        res.status(200).json({ BookData: book })
     } catch (err) {
         console.error(err.message);
         res.status(500).send({ "message": 'Server error' });
@@ -84,7 +84,7 @@ exports.updateBook = async (req, res) => {
 }
 exports.getAllBooks = async (req, res) => {
     try {
-        const { page = 1, limit = 12 } = req.query;
+        const { page = 1, limit = 10 } = req.query;
         if(page < 1 || limit < 1 ){
             return res.status(500).send({"message": 'Invalid page number or limit'});
         }
@@ -92,7 +92,7 @@ exports.getAllBooks = async (req, res) => {
         let bookList = await books.find().limit(limit).skip((page - 1)* limit).exec();
         let count = await books.count();
 
-        res.json({ bookList: bookList, totalPages : Math.ceil(count/limit), currentPage: page, totalCount: count})
+        res.json({ BookList: bookList, totalPages : Math.ceil(count/limit), currentPage: page, totalCount: count})
     }
     catch (err) {
         console.error(err);
