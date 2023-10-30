@@ -27,7 +27,7 @@ npm start
 `POST /api/v1/create/book`
 
 ```
-curl --location 'http://localhost:3000/api/v1/create/book' \
+curl --location 'http://3.109.58.16:3000/api/v1/create/book' \
 --header 'Content-Type: application/json' \
 --data '{
     "title" : "Ikigai",
@@ -60,7 +60,7 @@ curl --location 'http://localhost:3000/api/v1/create/book' \
 `GET api/v1/get/all-books`
 
 ```
-curl --location 'http://localhost:3000/api/v1/get/all-books?page=1&limit=2'
+curl --location 'http://3.109.58.16:3000/api/v1/get/all-books?page=1&limit=2'
 ```
 Contains two additional fields limit and page as it is a paginated query. By default values for page and limit are 1 and 10 respectively.
 ### Response
@@ -100,7 +100,7 @@ Contains two additional fields limit and page as it is a paginated query. By def
 `GET api/v1/get/bookByID/:bookID`
 
 ```
-curl --location 'http://localhost:3000/api/v1/get/bookByID/653f6580fc26a3f3e5b784ff'
+curl --location 'http://3.109.58.16:3000/api/v1/get/bookByID/653f6580fc26a3f3e5b784ff'
 ```
 ### Response
 ```
@@ -122,7 +122,7 @@ curl --location 'http://localhost:3000/api/v1/get/bookByID/653f6580fc26a3f3e5b78
 `PUT api/v1/update/bookByID/:bookID`
 
 ```
-curl --location --request PUT 'http://localhost:3000/api/v1/update/bookByID/653f6846760746c2ca876e91' \
+curl --location --request PUT 'http://3.109.58.16:3000/api/v1/update/bookByID/653f6846760746c2ca876e91' \
 --header 'Content-Type: application/json' \
 --data '{
     "genre" : "Comedy"
@@ -150,7 +150,7 @@ Inside the data object only add the field(s) to update.
 `DELETE api/v1/delete/bookByID/:bookID`
 
 ```
-curl --location --request DELETE 'http://localhost:3000/api/v1/delete/bookByID/653f638c5883a419cc9a3ada'
+curl --location --request DELETE 'http://3.109.58.16:3000/api/v1/delete/bookByID/653f638c5883a419cc9a3ada'
 ```
 ### Response
 ```
