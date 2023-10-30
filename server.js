@@ -1,6 +1,5 @@
 const express = require('express');
 const connectDB = require('./config/database');
-//const fileUpload = require("express-fileupload");
 const bodyParser = require("express");
 const cors = require('cors')
 const router = express.Router();
@@ -15,7 +14,6 @@ var corsOptions = {
 app.use(cors(corsOptions))
 // Init middleware
 app.use(express.json());
-//app.use(fileUpload());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -27,7 +25,7 @@ router.get('/health', (req, res) => {
 
 // Define Routes
 app.use('/api', router);
-app.use('/api/v1/books', require('./routes/api/v1/books'));
+app.use('/api/v1', require('./routes/api/v1/books'));
 
 const PORT = process.env.PORT || 3000;
 
